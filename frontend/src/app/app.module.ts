@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeViewModule } from './home-view/home-view.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HomeViewModule } from './home-view/home-view.module';
     BrowserModule,
     AppRoutingModule,
     HomeViewModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
