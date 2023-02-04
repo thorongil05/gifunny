@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <mat-form-field class="search-form-field" appearance="outline">
+    <mat-label>Search GIF</mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
