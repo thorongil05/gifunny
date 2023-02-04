@@ -1,10 +1,14 @@
-<div class="container-fluid">
+<form [formGroup]="this.formGroup" (ngSubmit)="this.search(this.formGroup)" (keydown.enter)="this.search(this.formGroup)">
   <mat-form-field class="search-form-field" appearance="outline">
-    <mat-label>Search GIF</mat-label>
-    <input matInput type="text" [(ngModel)]="value">
-    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+    <mat-label>Query</mat-label>
+    <input matInput type="text" [formControl]="this.queryFormControl">
+    <!-- <button *ngIf="this.queryFormControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
       <mat-icon>close</mat-icon>
-    </button>
+    </button> -->
+    <mat-error *ngIf="this.queryFormControl.hasError('required')">
+      Query is <strong>required</strong>
+    </mat-error>
+    <button mat-icon-button matSuffix type="submit"><mat-icon>search</mat-icon></button>
   </mat-form-field>
-</div>
+</form>
 

@@ -10,23 +10,28 @@ import { CardComponent } from './card/card.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule } from '@angular/forms';
+
+import { GridComponent } from './grid/grid.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     SearchComponent,
-    CardComponent
+    CardComponent,
+    GridComponent
   ],
   imports: [
-    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     HomeViewRoutingModule,
     CoreModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule
   ],
   exports: [
     HomeComponent

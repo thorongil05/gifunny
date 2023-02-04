@@ -1,5 +1,12 @@
 <app-main-menu></app-main-menu>
-<!-- <app-search></app-search> -->
-<div>
-    <p *ngFor="let gif of gifs">{{gif.name}}</p>
+<div class="central-search-div" [hidden]="this.isGridMode">
+    <h1>Welcome in GIFunny</h1>
+    <h2>Type a query and enjoy!</h2>
+    <app-search (newQueryEvent)="this.retrieveGifs($event)"></app-search>
+</div>
+<div class="grid-mode-div" [hidden]="!this.isGridMode">
+    <div class="sub-menu-div">
+        <app-search (newQueryEvent)="this.retrieveGifs($event)"></app-search>
+    </div>
+    <app-grid [gifs]="this.gifs"></app-grid>
 </div>

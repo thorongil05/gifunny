@@ -1,0 +1,5 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let gif of gifs">
+        <img src="{{gif.url}}" alt="" loading="lazy">
+    </mat-grid-tile>
+</mat-grid-list>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Gif } from 'src/app/model/gif';
 import { GifService } from 'src/app/services/gif-service/gif.service';
 
@@ -10,10 +10,12 @@ import { GifService } from 'src/app/services/gif-service/gif.service';
 export class HomeComponent {
 
   private _gifs : Gif[] = []
+  private _gridMode : boolean = false
 
   private gifObserver = {
     next: (gifs: Gif[]) => {
       this.gifs = gifs
+      this._gridMode = true
       console.log('Number of gifs loaded: ' + gifs.length)
       // this.dataSource = new MatTableDataSource(jobs)
       // this.retrieveUsers()
@@ -25,22 +27,24 @@ export class HomeComponent {
     }
   }
 
-  constructor(private _gifService : GifService) {
-    this.retrieveGifs()
-  }
+  constructor(private _gifService : GifService) {}
 
   
   public get gifs() : Gif[] {
     return this._gifs
   }
+
   
+  public get isGridMode() : boolean {
+    return this._gridMode
+  }  
   
   public set gifs(v : Gif[]) {
     this._gifs = v;
   }
 
-  public retrieveGifs() {
-    this._gifService.getGifs('prova', 10).subscribe(this.gifObserver)
+  public retrieveGifs(query: string) {
+    this._gifService.getGifs(query, 30).subscribe(this.gifObserver)
   }
  
 }
