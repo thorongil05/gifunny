@@ -1,6 +1,9 @@
 # GifunnyFrontend
 
 This application has been developed using Angular.
+It shows an initial view with a search bar, the user can type something and all the gifs related will be showed in a grid.
+If the user selects for a gif, a detailed view will appear: the user can click the heart to mark it as favourite or can click the close button to go back.
+Selecting the favourites button on the toolbar, the user can see the favourites gifs.
 
 ## Architecture
 
@@ -35,4 +38,4 @@ In order to build a responsive and user-friendly interface, this application exp
 - Add authentication service
 - Add authentication module
 - Add the ordering feature
-- Add the favourites
+- Update the favourites logic

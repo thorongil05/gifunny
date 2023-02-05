@@ -1,1 +1,6 @@
+<div class="m-4 title">
+    <h1>Favourites</h1>
+    <h2>Work in progress: not all the features have been deployed.</h2>
+    <p *ngIf="this.favourites.length == 0">No favourites at the moment: search for gifs and click the heart.</p>
+</div>
 <app-grid [gifs]="this.favourites" (gifClickedEvent)="this.selectedGif = this.favourites[$event]"></app-grid>
