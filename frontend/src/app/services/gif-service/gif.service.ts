@@ -33,12 +33,10 @@ export class GifService {
   public set gifs(v : Gif[]) {
     this._gifs = v;
   }
-  
-  
 
   public getGifs(query: string, limit: number) {
     console.log('Get gifs method started...');
-    let search_url = this._backend_url + '/search'
+    let search_url = this._backend_url + '/gifs'
     let params = new HttpParams();
     params = params.set('query', query)
     params = params.set('limit', limit)

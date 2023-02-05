@@ -10,6 +10,7 @@ import { CardComponent } from './card/card.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {ReactiveFormsModule } from '@angular/forms';
 
 import { GridComponent } from './grid/grid.component';
@@ -35,7 +36,8 @@ import { FavouritesComponent } from './favourites/favourites.component'
     MatInputModule,
     MatButtonModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ],
   exports: [
     HomeComponent

@@ -1,4 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
+import { MatSnackBar, MatSnackBarAction, MatSnackBarActions } from '@angular/material/snack-bar';
 import { Gif } from 'src/app/model/gif';
 import { GifService } from 'src/app/services/gif-service/gif.service';
 
@@ -18,17 +19,16 @@ export class HomeComponent {
       this.gifs = gifs
       this._gridMode = true
       console.log('Number of gifs loaded: ' + gifs.length)
-      // this.dataSource = new MatTableDataSource(jobs)
-      // this.retrieveUsers()
-      // this.isLoading = false
     },
     error: (err: any) => {
-      // this.handleError(err)
-      // this.isLoading = false
+      this._snackBar.open(err, 'Close')
     }
   }
 
-  constructor(private _gifService : GifService) {}
+  constructor(
+    private _gifService : GifService,
+    private _snackBar : MatSnackBar
+  ) {}
 
   
   public get gifs() : Gif[] {
