@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   ],
   imports: [
     CommonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule
   ],
   exports: [
     MainMenuComponent

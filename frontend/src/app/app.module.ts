@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeViewModule } from './home-view/home-view.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HomeViewModule,
     HttpClientModule,
+    CoreModule,
     BrowserAnimationsModule // Needed for animations in reactive form
   ],
   providers: [],

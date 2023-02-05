@@ -10,6 +10,7 @@ export class Gif {
     private _creator : string = ""
     private _url : string = ""
     private _rating : string = ""
+    private _isFavourite : boolean = false
 
     constructor() {}
     
@@ -48,6 +49,18 @@ export class Gif {
     public set rating(v : string) {
         this._rating = v;
     }
+
+    
+    public get isFavourite() : boolean {
+        return this._isFavourite
+    }
+
+
+    public set isFavourite(v : boolean) {
+        this._isFavourite = v;
+    }
+
+    
     
     public toJson() {
         return {

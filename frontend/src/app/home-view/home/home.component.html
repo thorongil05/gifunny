@@ -1,12 +1,14 @@
-<app-main-menu></app-main-menu>
-<div class="central-search-div" [hidden]="this.isGridMode">
+<div class="central-search-div" [hidden]="this.isGridMode || this.selectedGif != null">
     <h1>Welcome in GIFunny</h1>
     <h2>Type a query and enjoy!</h2>
     <app-search (newQueryEvent)="this.retrieveGifs($event)"></app-search>
 </div>
-<div class="grid-mode-div" [hidden]="!this.isGridMode">
-    <div class="sub-menu-div">
+<div class="grid-mode-div" [hidden]="!this.isGridMode || this.selectedGif != null">
+    <div class="mx-auto m-3" style="width: 200px;">
         <app-search (newQueryEvent)="this.retrieveGifs($event)"></app-search>
     </div>
-    <app-grid [gifs]="this.gifs"></app-grid>
+    <app-grid [gifs]="this.gifs" (gifClickedEvent)="this.selectedGif = this.gifs[$event]"></app-grid>
+</div>
+<div class="card-container" [hidden]="this.selectedGif == null">
+    <app-card [gif]="this.selectedGif" (exitEventEmitter)="this.handleGifDetailsExit()"></app-card>
 </div>

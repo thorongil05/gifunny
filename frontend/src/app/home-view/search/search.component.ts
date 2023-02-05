@@ -10,7 +10,7 @@ export class SearchComponent {
 
   @Output() newQueryEvent = new EventEmitter<string>();
 
-  private _queryFormControl = new FormControl('', Validators.requiredTrue)
+  private _queryFormControl = new FormControl('', [Validators.required])
   private _formGroup = new FormGroup({
     querySearchForm: this._queryFormControl
   });

@@ -1,11 +1,11 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
     <span>
-        <a href="">GIFunny</a>
+        <a [routerLink]='["home"]'>GIFunny</a>
     </span>
     <div>
         <ul>
             <li>
-                <a href="">Preferiti</a>
+                <a [routerLink]="['favourites']" routerLinkActive="true">Preferiti</a>
             </li>
         </ul>
     </div>

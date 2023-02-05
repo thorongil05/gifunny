@@ -14,6 +14,8 @@ import {ReactiveFormsModule } from '@angular/forms';
 
 import { GridComponent } from './grid/grid.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { FavouritesComponent } from './favourites/favourites.component'
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HomeComponent,
     SearchComponent,
     CardComponent,
-    GridComponent
+    GridComponent,
+    FavouritesComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -31,7 +34,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   exports: [
     HomeComponent

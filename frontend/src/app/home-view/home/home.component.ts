@@ -11,6 +11,7 @@ export class HomeComponent {
 
   private _gifs : Gif[] = []
   private _gridMode : boolean = false
+  private _selectedGif : Gif | undefined
 
   private gifObserver = {
     next: (gifs: Gif[]) => {
@@ -33,11 +34,19 @@ export class HomeComponent {
   public get gifs() : Gif[] {
     return this._gifs
   }
-
   
   public get isGridMode() : boolean {
     return this._gridMode
-  }  
+  } 
+
+  
+  public get selectedGif() : Gif | undefined {
+    return this._selectedGif
+  }
+
+  public set selectedGif(v : Gif | undefined) {
+    this._selectedGif = v;
+  }
   
   public set gifs(v : Gif[]) {
     this._gifs = v;
@@ -45,6 +54,10 @@ export class HomeComponent {
 
   public retrieveGifs(query: string) {
     this._gifService.getGifs(query, 30).subscribe(this.gifObserver)
+  }
+
+  public handleGifDetailsExit() {
+    this._selectedGif = undefined
   }
  
 }
