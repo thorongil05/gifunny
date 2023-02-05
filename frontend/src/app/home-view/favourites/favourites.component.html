@@ -1,1 +1,1 @@
-<p>favourites works!</p>
+<app-grid [gifs]="this.favourites" (gifClickedEvent)="this.selectedGif = this.favourites[$event]"></app-grid>

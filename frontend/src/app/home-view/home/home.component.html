@@ -3,7 +3,7 @@
     <h2>Type a query and enjoy!</h2>
     <app-search (newQueryEvent)="this.retrieveGifs($event)"></app-search>
 </div>
-<div class="grid-mode-div" [hidden]="!this.isGridMode || this.selectedGif != null">
+<div class="grid-mode-div" [hidden]="!this.isGridMode">
     <div class="mx-auto m-3" style="width: 200px;">
         <app-search (newQueryEvent)="this.retrieveGifs($event)"></app-search>
     </div>

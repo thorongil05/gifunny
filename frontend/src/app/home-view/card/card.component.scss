@@ -3,9 +3,10 @@
 }
 
 .card-container {
-    position: relative;
-    margin: auto;
+    position: absolute;
+    left: 50%;
     top: 50%;
-    height: 200px;
-    width: 400px;
+    width: 500px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }

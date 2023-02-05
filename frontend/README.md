@@ -1,27 +1,38 @@
 # GifunnyFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This application has been developed using Angular.
 
-## Development server
+## Architecture
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project is divided in 4 modules:
 
-## Code scaffolding
+- core: it contains all the core components of the application, such as the main menu.
+- home-view: it contains all the components belonging to the main view.
+- model: the classes that describes the logical structure of the date are stored here.
+- services: this module is composed by the services (e.g. the service used to interact with the backend). 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In order to build a responsive and user-friendly interface, this application exploits Bootstrap and Angular-Material.
 
-## Build
+## How to use
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### With Docker
 
-## Running unit tests
+1. Build the Dockerfile
+2. Run the docker image with the following setting:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    - host port: 80
 
-## Running end-to-end tests
+3. Go to http://127.0.0.1:80/, you should see a search bar in the middle of the screen.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Without Docker
 
-## Further help
+1. Install npm
+2. Install Angular CLI with the following instruction <code>npm install -g @angular/cli</code>
+3. Run <code>ng serve</code>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Next steps
+
+- Add authentication service
+- Add authentication module
+- Add the ordering feature
+- Add the favourites

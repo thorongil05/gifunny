@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Gif } from 'src/app/model/gif';
+import { ContextService } from 'src/app/services/context-service/context.service';
 
 @Component({
   selector: 'app-card',
@@ -12,8 +13,16 @@ export class CardComponent {
 
   @Output() exitEventEmitter = new EventEmitter<boolean>()
 
+  constructor(private contextService : ContextService) {}
+
   public exit() {
     this.exitEventEmitter.emit(true)
+  }
+
+  public addToFavourites() {
+    if (this.gif) {
+      this.contextService.addFavourite(this.gif)
+    }
   }
 
 }
