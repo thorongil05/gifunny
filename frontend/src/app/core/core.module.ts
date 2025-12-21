@@ -5,18 +5,9 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
-  declarations: [
-    MainMenuComponent
-  ],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    RouterModule
-  ],
-  exports: [
-    MainMenuComponent
-  ]
+  declarations: [MainMenuComponent],
+  imports: [CommonModule, MatToolbarModule, RouterModule],
+  exports: [MainMenuComponent],
 })
-export class CoreModule { }
+export class CoreModule {}

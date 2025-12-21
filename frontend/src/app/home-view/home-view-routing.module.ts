@@ -4,12 +4,12 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'favourites', component: FavouritesComponent}
+  { path: '', component: HomeComponent },
+  { path: 'favourites', component: FavouritesComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeViewRoutingModule { }
+export class HomeViewRoutingModule {}

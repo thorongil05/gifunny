@@ -1,88 +1,77 @@
-import { Component } from "@angular/core"
+import { Component } from '@angular/core';
 
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
-
 export class Gif {
-    
-    private _name : string = ""
-    private _creator : string = ""
-    private _url : string = ""
-    private _rating : string = ""
-    private _isFavourite : boolean = false
+  private _name: string = '';
+  private _creator: string = '';
+  private _url: string = '';
+  private _rating: string = '';
+  private _isFavourite: boolean = false;
 
-    constructor() {}
-    
-    public get name() : string {
-        return this._name
-    }
+  constructor() {}
 
-    
-    public set name(v : string) {
-        this._name = v;
-    }
+  public get name(): string {
+    return this._name;
+  }
 
-    public get creator() : string {
-        return this._creator
-    }
+  public set name(v: string) {
+    this._name = v;
+  }
 
-    
-    public set creator(v : string) {
-        this._creator = v;
-    }
+  public get creator(): string {
+    return this._creator;
+  }
 
-    public get url() : string {
-        return this._url
-    }
+  public set creator(v: string) {
+    this._creator = v;
+  }
 
-    
-    public set url(v : string) {
-        this._url = v;
-    }
+  public get url(): string {
+    return this._url;
+  }
 
-    public get rating() : string {
-        return this._rating
-    }
+  public set url(v: string) {
+    this._url = v;
+  }
 
-    
-    public set rating(v : string) {
-        this._rating = v;
-    }
+  public get rating(): string {
+    return this._rating;
+  }
 
-    
-    public get isFavourite() : boolean {
-        return this._isFavourite
-    }
+  public set rating(v: string) {
+    this._rating = v;
+  }
 
+  public get isFavourite(): boolean {
+    return this._isFavourite;
+  }
 
-    public set isFavourite(v : boolean) {
-        this._isFavourite = v;
-    }
+  public set isFavourite(v: boolean) {
+    this._isFavourite = v;
+  }
 
-    
-    
-    public toJson() {
-        return {
-            name: this.name,
-            creator: this.creator,
-            url: this.url,
-            rating: this.rating
-        }
-    }
+  public toJson() {
+    return {
+      name: this.name,
+      creator: this.creator,
+      url: this.url,
+      rating: this.rating,
+    };
+  }
 
-    public static fromJson(json: any) {
-        let gif = new Gif()
-        gif.name = json.name 
-        gif.creator = json.creator
-        gif.url = json.url
-        gif.rating = json.rating
-        return gif
-    }
+  public static fromJson(json: any) {
+    let gif = new Gif();
+    gif.name = json.name;
+    gif.creator = json.creator;
+    gif.url = json.url;
+    gif.rating = json.rating;
+    return gif;
+  }
 
-    public toString() {
-        return this._name
-    }
-
+  public toString() {
+    return this._name;
+  }
 }

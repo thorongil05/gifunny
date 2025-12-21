@@ -11,13 +11,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { GridComponent } from './grid/grid.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { FavouritesComponent } from './favourites/favourites.component'
-
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,7 @@ import { FavouritesComponent } from './favourites/favourites.component'
     SearchComponent,
     CardComponent,
     GridComponent,
-    FavouritesComponent
+    FavouritesComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -37,10 +36,8 @@ import { FavouritesComponent } from './favourites/favourites.component'
     MatButtonModule,
     MatGridListModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
-  exports: [
-    HomeComponent
-  ]
+  exports: [HomeComponent],
 })
-export class HomeViewModule { }
+export class HomeViewModule {}
