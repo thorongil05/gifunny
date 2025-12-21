@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FavouritesComponent } from 'src/app/home-view/favourites/favourites.component';
 import { Gif } from 'src/app/model/gif';
 
 @Injectable({

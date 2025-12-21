@@ -7,19 +7,21 @@ import { Gif } from 'src/app/model/gif';
   providedIn: 'root',
 })
 export class GifService {
-  private _backend_url = 'http://127.0.0.1:5000';
+  private readonly _backend_url = 'http://127.0.0.1:5000';
   private _gifs: Gif[] = [];
 
-  private _headerDict = {
+  private readonly _headerDict = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': '*',
     'Access-Control-Allow-Headers': '*',
     'Content-Type': 'application/json',
   };
 
-  private _httpHeaders: HttpHeaders = new HttpHeaders(this._headerDict);
+  private readonly _httpHeaders: HttpHeaders = new HttpHeaders(
+    this._headerDict,
+  );
 
-  constructor(private _http: HttpClient) {}
+  constructor(private readonly client: HttpClient) {}
 
   public get gifs(): Gif[] {
     return this._gifs;
@@ -40,7 +42,7 @@ export class GifService {
       params: params,
     };
     console.log(params);
-    return this._http.get(search_url, options).pipe(
+    return this.client.get(search_url, options).pipe(
       map((response: any) => {
         console.log('Get gifs method response: ' + response);
         return this.extractGifs(response);
