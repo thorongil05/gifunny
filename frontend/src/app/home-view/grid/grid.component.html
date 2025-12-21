@@ -1,5 +1,7 @@
 <mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile *ngFor="let gif of gifs; let i = index" (click)="this.onGifClick(i)">
-        <img src="{{gif.url}}" alt="" loading="lazy" >
+  @for (gif of gifs; track gif; let i = $index) {
+    <mat-grid-tile (click)="this.onGifClick(i)">
+      <img src="{{gif.url}}" alt="" loading="lazy" >
     </mat-grid-tile>
+  }
 </mat-grid-list>
