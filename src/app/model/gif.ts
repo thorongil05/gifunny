@@ -1,17 +1,9 @@
-import { Component } from '@angular/core';
-
-@Component({
-  template: '',
-  standalone: false,
-})
 export class Gif {
   private _name: string = '';
   private _creator: string = '';
   private _url: string = '';
   private _rating: string = '';
   private _isFavourite: boolean = false;
-
-  constructor() {}
 
   public get name(): string {
     return this._name;
