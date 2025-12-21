@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gifunny-frontend:build:production"
+              "buildTarget": "gifunny-frontend:build:production"
             },
             "development": {
-              "browserTarget": "gifunny-frontend:build:development"
+              "buildTarget": "gifunny-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gifunny-frontend:build"
+            "buildTarget": "gifunny-frontend:build"
           }
         },
         "test": {
