@@ -3,27 +3,25 @@ import { Gif } from 'src/app/model/gif';
 import { ContextService } from 'src/app/services/context-service/context.service';
 
 @Component({
-    selector: 'app-card',
-    templateUrl: './card.component.html',
-    styleUrls: ['./card.component.scss'],
-    standalone: false
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
+  standalone: false,
 })
 export class CardComponent {
+  @Input() gif: Gif | undefined;
 
-  @Input() gif : Gif | undefined 
+  @Output() exitEventEmitter = new EventEmitter<boolean>();
 
-  @Output() exitEventEmitter = new EventEmitter<boolean>()
-
-  constructor(private contextService : ContextService) {}
+  constructor(private contextService: ContextService) {}
 
   public exit() {
-    this.exitEventEmitter.emit(true)
+    this.exitEventEmitter.emit(true);
   }
 
   public addToFavourites() {
     if (this.gif) {
-      this.contextService.addFavourite(this.gif)
+      this.contextService.addFavourite(this.gif);
     }
   }
-
 }

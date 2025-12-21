@@ -2,19 +2,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Gif } from 'src/app/model/gif';
 
 @Component({
-    selector: 'app-grid',
-    templateUrl: './grid.component.html',
-    styleUrls: ['./grid.component.scss'],
-    standalone: false
+  selector: 'app-grid',
+  templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.scss'],
+  standalone: false,
 })
 export class GridComponent {
+  @Input() gifs: Gif[] = [];
 
-  @Input() gifs : Gif[] = []
-
-  @Output() gifClickedEvent : EventEmitter<number> = new EventEmitter<number>()
+  @Output() gifClickedEvent: EventEmitter<number> = new EventEmitter<number>();
 
   public onGifClick(position: number) {
-    this.gifClickedEvent.emit(position)
+    this.gifClickedEvent.emit(position);
   }
-
 }
