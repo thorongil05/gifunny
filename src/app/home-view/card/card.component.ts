@@ -3,9 +3,10 @@ import { Gif } from 'src/app/model/gif';
 import { ContextService } from 'src/app/services/context-service/context.service';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+    selector: 'app-card',
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.scss'],
+    standalone: false
 })
 export class CardComponent {
 
