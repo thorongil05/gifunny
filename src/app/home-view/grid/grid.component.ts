@@ -5,7 +5,6 @@ import { Gif } from 'src/app/model/gif';
   selector: 'app-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.scss'],
-  standalone: false,
 })
 export class GridComponent {
   @Input() gifs: Gif[] = [];

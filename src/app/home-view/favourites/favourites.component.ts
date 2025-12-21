@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { Gif } from 'src/app/model/gif';
 import { ContextService } from 'src/app/services/context-service/context.service';
+import { GridComponent } from '../grid/grid.component';
 
 @Component({
   selector: 'app-favourites',
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.scss'],
-  standalone: false,
+  imports: [GridComponent],
 })
 export class FavouritesComponent {
-  private _favourites: Gif[] = [];
+  private readonly _favourites: Gif[] = [];
   private _selectedGif: Gif | undefined;
 
-  constructor(private contextService: ContextService) {
+  constructor(private readonly contextService: ContextService) {
     this._favourites = contextService.favourites;
   }
 

@@ -1,24 +1,23 @@
-import { Component, EventEmitter } from '@angular/core';
-import {
-  MatSnackBar,
-  MatSnackBarAction,
-  MatSnackBarActions,
-} from '@angular/material/snack-bar';
+import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Gif } from 'src/app/model/gif';
 import { GifService } from 'src/app/services/gif-service/gif.service';
+import { SearchComponent } from '../search/search.component';
+import { GridComponent } from '../grid/grid.component';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  imports: [SearchComponent, GridComponent, CardComponent],
   styleUrls: ['./home.component.scss'],
-  standalone: false,
 })
 export class HomeComponent {
   private _gifs: Gif[] = [];
   private _gridMode: boolean = false;
   private _selectedGif: Gif | undefined;
 
-  private gifObserver = {
+  private readonly gifObserver = {
     next: (gifs: Gif[]) => {
       this.gifs = gifs;
       this._gridMode = true;
@@ -30,8 +29,8 @@ export class HomeComponent {
   };
 
   constructor(
-    private _gifService: GifService,
-    private _snackBar: MatSnackBar,
+    private readonly _gifService: GifService,
+    private readonly _snackBar: MatSnackBar,
   ) {}
 
   public get gifs(): Gif[] {
