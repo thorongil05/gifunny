@@ -1,17 +1,26 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
+  imports: [ReactiveFormsModule, MatInputModule, MatIconModule],
   styleUrls: ['./search.component.scss'],
-  standalone: false,
 })
 export class SearchComponent {
   @Output() newQueryEvent = new EventEmitter<string>();
 
-  private _queryFormControl = new FormControl('', [Validators.required]);
-  private _formGroup = new FormGroup({
+  private readonly _queryFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  private readonly _formGroup = new FormGroup({
     querySearchForm: this._queryFormControl,
   });
 

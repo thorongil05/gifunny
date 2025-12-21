@@ -5,4 +5,7 @@
     <p>No favourites at the moment: search for gifs and click the heart.</p>
   }
 </div>
-<app-grid [gifs]="this.favourites" (gifClickedEvent)="this.selectedGif = this.favourites[$event]"></app-grid>
+<app-grid
+  [gifs]="this.favourites"
+  (gifClickedEvent)="this.selectedGif = this.favourites[$event]"
+></app-grid>
