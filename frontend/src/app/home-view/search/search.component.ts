@@ -5,13 +5,19 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  imports: [ReactiveFormsModule, MatInputModule, MatIconModule],
+  imports: [
+    ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
