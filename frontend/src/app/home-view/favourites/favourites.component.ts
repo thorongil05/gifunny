@@ -10,15 +10,12 @@ import { GridComponent } from '../grid/grid.component';
   imports: [GridComponent],
 })
 export class FavouritesComponent {
-  private readonly _favourites: Gif[] = [];
   private _selectedGif: Gif | undefined;
 
-  constructor(private readonly contextService: ContextService) {
-    this._favourites = contextService.favourites;
-  }
+  constructor(private readonly contextService: ContextService) {}
 
   public get favourites(): Gif[] {
-    return this._favourites;
+    return this.contextService.favourites;
   }
 
   public get selectedGif(): Gif | undefined {

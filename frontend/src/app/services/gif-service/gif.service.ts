@@ -7,18 +7,9 @@ import { Gif } from '../../model/gif';
   providedIn: 'root',
 })
 export class GifService {
-  private _backend_url = '';
-  private _gifs: Gif[] = [];
+  private readonly _backend_url = '';
 
-  constructor(private _http: HttpClient) {}
-
-  public get gifs(): Gif[] {
-    return this._gifs;
-  }
-
-  public set gifs(v: Gif[]) {
-    this._gifs = v;
-  }
+  constructor(private readonly _http: HttpClient) {}
 
   public getGifs(query: string, limit: number) {
     console.log('Get gifs method started...');
@@ -43,15 +34,8 @@ export class GifService {
   }
 
   private extractGifs(response: any): Gif[] {
-    let gifs: Gif[] = [];
-    let jsonGifs = response.data as any[];
-    jsonGifs.forEach((element) => {
-      console.log(element);
-      let gif = Gif.fromJson(element);
-      gifs.push(gif);
-    });
-    this.gifs = gifs;
-    return gifs;
+    const jsonGifs = response.data as any[];
+    return jsonGifs.map((element) => Gif.fromJson(element));
   }
 
   private createErrorMessage(response: any): string {

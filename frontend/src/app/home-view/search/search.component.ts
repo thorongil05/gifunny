@@ -42,7 +42,7 @@ export class SearchComponent {
     return this._formGroup;
   }
 
-  public search(formGroup: FormGroup) {
+  public search() {
     let query = this.queryFormControl.value;
     console.log('Searching for gifs with query: ' + query);
     if (query) {

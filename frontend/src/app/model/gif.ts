@@ -1,49 +1,9 @@
 export class Gif {
-  private _name: string = '';
-  private _creator: string = '';
-  private _url: string = '';
-  private _rating: string = '';
-  private _isFavourite: boolean = false;
-
-  public get name(): string {
-    return this._name;
-  }
-
-  public set name(v: string) {
-    this._name = v;
-  }
-
-  public get creator(): string {
-    return this._creator;
-  }
-
-  public set creator(v: string) {
-    this._creator = v;
-  }
-
-  public get url(): string {
-    return this._url;
-  }
-
-  public set url(v: string) {
-    this._url = v;
-  }
-
-  public get rating(): string {
-    return this._rating;
-  }
-
-  public set rating(v: string) {
-    this._rating = v;
-  }
-
-  public get isFavourite(): boolean {
-    return this._isFavourite;
-  }
-
-  public set isFavourite(v: boolean) {
-    this._isFavourite = v;
-  }
+  public name: string = '';
+  public creator: string = '';
+  public url: string = '';
+  public rating: string = '';
+  public isFavourite: boolean = false;
 
   public toJson() {
     return {
@@ -55,7 +15,7 @@ export class Gif {
   }
 
   public static fromJson(json: any) {
-    let gif = new Gif();
+    const gif = new Gif();
     gif.name = json.name;
     gif.creator = json.creator;
     gif.url = json.url;
@@ -64,6 +24,6 @@ export class Gif {
   }
 
   public toString() {
-    return this._name;
+    return this.name;
   }
 }

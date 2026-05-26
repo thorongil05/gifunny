@@ -1,7 +1,7 @@
 <form
   [formGroup]="this.formGroup"
-  (ngSubmit)="this.search(this.formGroup)"
-  (keydown.enter)="this.search(this.formGroup)"
+  (ngSubmit)="this.search()"
+  (keydown.enter)="this.search()"
 >
   <mat-form-field class="search-form-field" appearance="outline">
     <mat-label>Query</mat-label>
