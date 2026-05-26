@@ -18,7 +18,7 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatButtonModule,
   ],
-  styleUrls: ['./search.component.scss'],
+  styleUrl: './search.component.scss',
 })
 export class SearchComponent {
   @Output() newQueryEvent = new EventEmitter<string>();
@@ -43,8 +43,7 @@ export class SearchComponent {
   }
 
   public search() {
-    let query = this.queryFormControl.value;
-    console.log('Searching for gifs with query: ' + query);
+    const query = this.queryFormControl.value;
     if (query) {
       this.newQueryEvent.emit(query);
     }

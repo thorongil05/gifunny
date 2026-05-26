@@ -5,7 +5,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss'],
+  styleUrl: './grid.component.scss',
   imports: [MatGridListModule],
 })
 export class GridComponent {

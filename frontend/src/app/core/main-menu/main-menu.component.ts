@@ -5,7 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.scss'],
+  styleUrl: './main-menu.component.scss',
   imports: [RouterModule, MatToolbarModule],
 })
 export class MainMenuComponent {}

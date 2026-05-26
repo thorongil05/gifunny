@@ -6,7 +6,7 @@ import { GridComponent } from '../grid/grid.component';
 @Component({
   selector: 'app-favourites',
   templateUrl: './favourites.component.html',
-  styleUrls: ['./favourites.component.scss'],
+  styleUrl: './favourites.component.scss',
   imports: [GridComponent],
 })
 export class FavouritesComponent {

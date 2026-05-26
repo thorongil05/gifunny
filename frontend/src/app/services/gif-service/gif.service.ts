@@ -1,7 +1,19 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
 import { Gif } from '../../model/gif';
+
+interface GifData {
+  name: string;
+  creator: string;
+  url: string;
+  rating: string;
+}
+
+interface GifsResponse {
+  message: string;
+  data: GifData[];
+}
 
 @Injectable({
   providedIn: 'root',
@@ -12,34 +24,25 @@ export class GifService {
   constructor(private readonly _http: HttpClient) {}
 
   public getGifs(query: string, limit: number) {
-    console.log('Get gifs method started...');
-    let search_url = this._backend_url + '/gifs';
+    const search_url = this._backend_url + '/gifs';
     let params = new HttpParams();
     params = params.set('query', query);
     params = params.set('limit', limit);
-    let options = {
-      params: params,
-    };
-    console.log(params);
-    return this._http.get(search_url, options).pipe(
-      map((response: any) => {
-        console.log('Get gifs method response: ' + response);
-        return this.extractGifs(response);
-      }),
-      catchError((response: any) => {
-        let errorMessage = this.createErrorMessage(response);
+    const options = { params };
+    return this._http.get<GifsResponse>(search_url, options).pipe(
+      map((response) => this.extractGifs(response)),
+      catchError((response: HttpErrorResponse) => {
+        const errorMessage = this.createErrorMessage(response);
         throw new Error(errorMessage);
       }),
     );
   }
 
-  private extractGifs(response: any): Gif[] {
-    const jsonGifs = response.data as any[];
-    return jsonGifs.map((element) => Gif.fromJson(element));
+  private extractGifs(response: GifsResponse): Gif[] {
+    return response.data.map((element) => Gif.fromJson(element));
   }
 
-  private createErrorMessage(response: any): string {
-    console.log(response);
+  private createErrorMessage(response: HttpErrorResponse): string {
     if (response.status === 0) {
       return 'Error with CORS';
     }

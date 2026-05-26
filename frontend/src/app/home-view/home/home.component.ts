@@ -10,7 +10,7 @@ import { CardComponent } from '../card/card.component';
   selector: 'app-home',
   templateUrl: './home.component.html',
   imports: [SearchComponent, GridComponent, CardComponent],
-  styleUrls: ['./home.component.scss'],
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   private _gifs: Gif[] = [];

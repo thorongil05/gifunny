@@ -7,7 +7,7 @@ import { ContextService } from '../../services/context-service/context.service';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss'],
+  styleUrl: './card.component.scss',
   imports: [MatCardModule, MatIconModule],
 })
 export class CardComponent {
