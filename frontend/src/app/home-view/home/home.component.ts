@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Gif } from 'src/app/model/gif';
-import { GifService } from 'src/app/services/gif-service/gif.service';
+import { Gif } from '../../model/gif';
+import { GifService } from '../../services/gif-service/gif.service';
 import { SearchComponent } from '../search/search.component';
 import { GridComponent } from '../grid/grid.component';
 import { CardComponent } from '../card/card.component';

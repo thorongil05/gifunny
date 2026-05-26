@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Gif } from 'src/app/model/gif';
+import { Gif } from '../../model/gif';
 
 @Injectable({
   providedIn: 'root',

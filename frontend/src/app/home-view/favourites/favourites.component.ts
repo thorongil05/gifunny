@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Gif } from 'src/app/model/gif';
-import { ContextService } from 'src/app/services/context-service/context.service';
+import { Gif } from '../../model/gif';
+import { ContextService } from '../../services/context-service/context.service';
 import { GridComponent } from '../grid/grid.component';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { Gif } from 'src/app/model/gif';
-import { ContextService } from 'src/app/services/context-service/context.service';
+import { Gif } from '../../model/gif';
+import { ContextService } from '../../services/context-service/context.service';
 
 @Component({
   selector: 'app-card',

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Gif } from 'src/app/model/gif';
+import { Gif } from '../../model/gif';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({

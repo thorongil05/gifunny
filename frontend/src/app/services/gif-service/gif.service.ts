@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
-import { Gif } from 'src/app/model/gif';
+import { Gif } from '../../model/gif';
 
 @Injectable({
   providedIn: 'root',
