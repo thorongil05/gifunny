@@ -7,21 +7,19 @@ import { Gif } from 'src/app/model/gif';
   providedIn: 'root',
 })
 export class GifService {
-  private readonly _backend_url = 'http://127.0.0.1:5000';
+  private _backend_url = 'http://127.0.0.1:5000';
   private _gifs: Gif[] = [];
 
-  private readonly _headerDict = {
+  private _headerDict = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': '*',
     'Access-Control-Allow-Headers': '*',
     'Content-Type': 'application/json',
   };
 
-  private readonly _httpHeaders: HttpHeaders = new HttpHeaders(
-    this._headerDict,
-  );
+  private _httpHeaders: HttpHeaders = new HttpHeaders(this._headerDict);
 
-  constructor(private readonly client: HttpClient) {}
+  constructor(private _http: HttpClient) {}
 
   public get gifs(): Gif[] {
     return this._gifs;
@@ -42,7 +40,7 @@ export class GifService {
       params: params,
     };
     console.log(params);
-    return this.client.get(search_url, options).pipe(
+    return this._http.get(search_url, options).pipe(
       map((response: any) => {
         console.log('Get gifs method response: ' + response);
         return this.extractGifs(response);
@@ -67,6 +65,10 @@ export class GifService {
   }
 
   private createErrorMessage(response: any): string {
-    return 'TEMP';
+    console.log(response);
+    if (response.status == '0') {
+      return 'Error with CORS';
+    }
+    return JSON.stringify(response);
   }
 }
