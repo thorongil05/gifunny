@@ -1,4 +1,3 @@
-from typing import List
 import constants
 import requests
 from .persistence_exception import PersistenceException
@@ -22,7 +21,7 @@ class GiphyManager:
             "limit": limit
         }
 
-    def get_gifs(self, query: str, limit: int = 50) -> List[Gif]:
+    def get_gifs(self, query: str, limit: int = 50) -> list[Gif]:
         try:
             url = self.search_end_point
             search_parameters = self.get_search_params(query, limit=limit)
