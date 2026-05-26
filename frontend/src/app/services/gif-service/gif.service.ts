@@ -7,7 +7,7 @@ import { Gif } from 'src/app/model/gif';
   providedIn: 'root',
 })
 export class GifService {
-  private _backend_url = 'http://127.0.0.1:5000';
+  private _backend_url = '';
   private _gifs: Gif[] = [];
 
   private _headerDict = {

@@ -1,9 +1,11 @@
 # Stage 1
-FROM node:14.20 as node
+FROM node:22-alpine AS node
 WORKDIR /app
+COPY package*.json ./
+RUN npm ci
 COPY . .
-RUN npm install
-RUN npm run build --prod
+RUN npm run build
 # Stage 2
 FROM nginx:alpine
 COPY --from=node /app/dist/gifunny-frontend /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
