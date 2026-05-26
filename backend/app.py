@@ -1,5 +1,5 @@
 from http.client import OK, INTERNAL_SERVER_ERROR, BAD_REQUEST
-from flask import Flask, jsonify, request, escape
+from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 from persistence.giphy_manager import GiphyManager, PersistenceException
 
@@ -23,10 +23,13 @@ def retrieve_gifs_by_query():
                     'data': []
                 }
             ), BAD_REQUEST
-        query = escape(args['query'])
-        limit = escape(args['limit'])
+        query = args['query']
+        try:
+            limit = int(args['limit'])
+        except ValueError:
+            return jsonify({'message': 'Failure: limit must be an integer!', 'data': []}), BAD_REQUEST
         gifs = giphy_manager.get_gifs(query, limit=limit)
-        gifs_dict = [gif.__dict__() for gif in gifs]
+        gifs_dict = [gif.to_dict() for gif in gifs]
         return jsonify(
             {
                 'message': 'Success',

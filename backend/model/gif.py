@@ -53,7 +53,7 @@ class Gif(ABC):
     def __repr__(self) -> str:
         return f'{self.name} - {self.creator} - {self.url}'
 
-    def __dict__(self) -> dict:
+    def to_dict(self) -> dict:
         return {
             'name': self.name,
             'url': self.url,
