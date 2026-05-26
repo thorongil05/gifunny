@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
 import { Gif } from '../../model/gif';
@@ -9,15 +9,6 @@ import { Gif } from '../../model/gif';
 export class GifService {
   private _backend_url = '';
   private _gifs: Gif[] = [];
-
-  private _headerDict = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': '*',
-    'Access-Control-Allow-Headers': '*',
-    'Content-Type': 'application/json',
-  };
-
-  private _httpHeaders: HttpHeaders = new HttpHeaders(this._headerDict);
 
   constructor(private _http: HttpClient) {}
 
@@ -36,7 +27,6 @@ export class GifService {
     params = params.set('query', query);
     params = params.set('limit', limit);
     let options = {
-      headers: this._httpHeaders,
       params: params,
     };
     console.log(params);
@@ -66,7 +56,7 @@ export class GifService {
 
   private createErrorMessage(response: any): string {
     console.log(response);
-    if (response.status == '0') {
+    if (response.status === 0) {
       return 'Error with CORS';
     }
     return JSON.stringify(response);
