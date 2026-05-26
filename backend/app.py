@@ -1,6 +1,5 @@
 from http.client import OK, INTERNAL_SERVER_ERROR, BAD_REQUEST
 from flask import Flask, jsonify, request
-from flask_cors import CORS, cross_origin
 from persistence.giphy_manager import GiphyManager, PersistenceException
 
 giphy_manager = GiphyManager()
@@ -12,7 +11,6 @@ def home():
     return 'Welcome in GIFunny backend'
 
 @app.route('/gifs', methods=['GET'])
-@cross_origin()
 def retrieve_gifs_by_query():
     try:
         args = request.args
